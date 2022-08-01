@@ -9,3 +9,113 @@
   <li>XAMPP Installer<ul><li>https://www.apachefriends.org/download.html</li></ul></li>
   <li>Any IDE; in this project, Visual Studio Code used.<ul><li>https://code.visualstudio.com/docs/?dv=win</li></ul></li>
 </ul>
+<h3>Code Style</h3>
+<ul><li>Comments-The comments is used at the top or the sides of codes with // (double slash)</li></ul>
+ 
+```php
+echo json_encode($btnreturn);  //The json_encode() function is used to encode a value to JSON format. 
+```
+<h3>Code Documentation</h3>
+<h4>1. Submit Form</h4>
+<ul><li>Function submitForm(event,page)-Fetch API</li></ul>
+
+```javascript
+function submitForm(event,page) { //bring page=from url as parameter
+   
+    // Prevent the form from submitting.
+    event.preventDefault();
+   
+    //get editform id
+    var myData = new FormData(document.getElementById('editForm'));
+
+    // Fetch is a browser API for loading texts, images, structured data, asynchronously to update an HTML page
+   
+    //fetch API to get form data
+    fetch('processNote.php', {
+
+            method: 'POST',
+
+            body: myData    //FormData
+
+        })
+        
+        // Converting received data ->returns the text content of the selected elements.
+        .then(response => response.text())
+
+        .then(data => {
+
+            //result output
+            console.log('Success:', data);  //form data
+
+             //fetch API to get buuton value -button submitbutton and button editrow from form
+            fetch('processBtn.php', {
+
+                method: 'POST',
+    
+                body: myData    //FormData
+    
+            })
+            // Converting received data ->returns the text content of the selected elements.
+            .then(response => response.text())
+    
+            .then(btnData => {  //return value of submitbutton to differentiate between save and edit
+
+                var BtnValue=JSON.parse(btnData);
+
+                console.log('Success:', BtnValue.EDITROW);  //index of row data to be edited
+                console.log('Success:', BtnValue.SUBMITBUTTON);  //value of submitton if 1=save ,2=edit body data,3=edit main,4=submit empty form for main of body 
+                
+                if(BtnValue.SUBMITBUTTON==1){ //save new data to local storage
+
+                    if ("pagedata" in localStorage) {  //if theres pagedata in localStorage
+                        // parsing data that was received as JSON;   
+                       //get item from local storage-returns value of the specified Storage Object item
+                       var docdata = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) : [];
+                       console.log(docdata);   //print data in localstorage 
+                      
+                       docdata.push(data);  //push data to local storage
+       
+                   } else {  //else no data in local storage->push empty array
+       
+                       docdata = []; //declare as array
+       
+                       emptydata = [];   //declare as array
+       
+                       docdata.push(emptydata); //push empty array to the empty localStorage
+       
+                       docdata.push(data);
+                       //push/adds data after emptydata
+                    
+                   }
+       
+                 
+                   localStorage.setItem('pagedata', JSON.stringify(docdata));  //  sets the value of the "data" Object item.Save Data to Local Storage.
+                  
+                   $("#localstorage").html(""); // //emptying #localstorage container so no repeated data is displayed
+                   
+                   loadData(); //call loadData() to display local storage data of pagedata
+     
+                }
+
+              //some code here
+    
+             //error handling
+            .catch(error => {
+    
+                console.error('Error:', error);
+    
+            });
+    
+           
+        })
+        
+         //error handling
+        .catch(error => {
+
+            console.error('Error:', error);
+
+        });
+
+}
+```
+<ul><li>This code is used to send a request to <strong>processNote.php</strong> to process the form data and return as json encoded text as a response and send a request to <strong>processBtn.php</strong> to response with the button value from the form.</li></ul>
