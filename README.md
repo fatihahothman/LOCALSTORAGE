@@ -224,6 +224,7 @@ if(isset($_POST['submitbutton'])){
 ```
 <ul><li>This PHP code is used to fetch button value from form and return to the Fetch API.</li></ul>
 <h4>2. Load Data </h4>
+<ul><li><h5>Function loadData()</h5></li></ul>
 
 ``` javascript
   function loadData() {
@@ -279,4 +280,51 @@ if(isset($_POST['submitbutton'])){
 <ul><li>What a function do</li><ul><li>This code is used to load data from local storage and display on HTML page.</li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
+<h5>3. Remove data</h5>
+<ul><li><h5>Function removePageData(value)</h5></li></ul>
 
+``` javascript
+ function removePageData(value) {
+            // console.log(value);
+            // parsing data that was received as JSON;   
+            //get item from local storage-returns value of the specified Storage Object item
+            pageStorage = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) :
+                [];
+
+            if (pageStorage) {
+                for (let i = 1; i < pageStorage.length; i++) { //loop thru local storage
+                    let dataArray = JSON.parse(pageStorage[i]); //declaring dataArray to access key in local storage
+
+                    if (i == value) { //if value pass in in remove(value) is equal to i 
+                        // console.log(dataArray.UPLOAD);
+                        imgTodel = dataArray.IMG; //set var for img to be deleted from directory
+                        console.log(imgTodel); //show imgTodel value in console.log() to verify 
+
+
+                        //send AJAX request for deleting image from directory
+                        $.ajax({
+                            url: 'deleteimg.php', //unlink image from directory (images)     
+                            data: {
+                                'file': imgTodel
+                            }, //file->image to be deleted
+                            method: 'POST', //using method POST
+                        });
+
+                        //delete local storage data 
+                        //splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place
+                        pageStorage.splice(value, 1); //  remove one data at index =value -> splice(start, deleteCount) 
+
+                    }
+                }
+                // JSON.stringify() method converts a JavaScript object or value to a JSON string before save to local storage
+                // because Local storage can only save strings
+                // sets the value of the specified Storage Object item.
+                localStorage.setItem("pagedata", JSON.stringify(pageStorage));
+                loadData();
+            }
+
+        }
+```
+<ul><li>What a function do</li><ul><li>This code is used to delete page data from local storage.</li><li>Send AJAX request to <strong>deleteimg.php</strong></li></ul></ul>
+<ul><li>What the function's parameters or arguments are</li><ul><li><strong>value</strong> is the parameter of this function.Value is the index of data to be deleted in the local storage</li></ul></ul>
+<ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
