@@ -345,3 +345,75 @@ if(isset($_POST['submitbutton'])){
  ?>  
 ```
 <ul><li>This PHP code is used to unlink image of data deleted from directory.</li></li>
+<h4>3. Save Section</h4>
+<ul><h5>A. Function savePage()</h5></ul>
+``` javascript
+function savePage() {
+           
+            $("#pgData").html(""); //clear localstorage container
+        
+            let storage = new Array();
+            //get maindata in local storage
+            storage = JSON.parse(localStorage.getItem("maindata")) ? JSON.parse(localStorage.getItem("maindata")) : [];
+
+            //storing page number of section 
+            counter = JSON.parse(localStorage.getItem("counterPage")) ? JSON.parse(localStorage.getItem( "counterPage")) : [];
+
+            Paracounter = JSON.parse(localStorage.getItem("counterPara")) ? JSON.parse(localStorage.getItem("counterPara")) : []; //save paragraph counter
+            //paracounter save total of paragraph container which is equal to body length of current data
+            //it is used for removing paragraph container that has been added to back the form to default state [only one paragraph ] everytime before value is fetched to form 
+
+
+            if (storage) {
+                
+                let pageStorage = new Array();
+                pageStorage = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) : []; //get pagedata in local storage
+           
+                counter = storage.length +1; //counter equal to storage length + 1 ,if there is 1 data in maindata then counter=1
+
+                
+                    x=pageStorage.length-1;
+                    let dataArray = JSON.parse(pageStorage[x]);; 
+                  
+                    console.log(dataArray.BODY.length);
+                  
+                
+                if(counter>1){  //if current page not first page
+                    document.getElementById("resetForm").click(); //reset form
+
+                    if (Paracounter) {
+                        console.log(Paracounter);
+
+                        for (let i = 1; i < Paracounter; i++) { //based on current counterPara value in LS
+
+                            document.getElementById("remove_field").click(); //click button to remove paragraph that has been added
+
+                        }
+                    }
+
+                    //to let form submitted finish executed first
+                   setTimeout(()=>{
+                       savePageinBody();
+                    },4);
+                    
+                    //submit empty form so all data will be in body[]
+                    document.getElementById("submitbutton").value = "4"; //set submitbutton to 4  (use in json.js)
+                    document.getElementById("save").click();// Form submission
+
+                }else{
+                    savePageMain();  //first page
+                }
+
+                Paracounter = dataArray.BODY.length; ////paracounter =current body length
+
+                localStorage.setItem('counterPara', JSON.stringify(Paracounter)); //save paracounter
+
+            }
+                localStorage.setItem('counterPage', JSON.stringify(counter)); //save new page number to localStorage
+
+        }
+
+```
+<ul><li>What a function do</li><ul><li>This code is used to call another function which are savePageMain() or savePageinBody().</li></ul></ul>
+<ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
+<ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
