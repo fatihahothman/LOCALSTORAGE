@@ -17,7 +17,7 @@ echo json_encode($btnreturn);  //The json_encode() function is used to encode a 
 ```
 <h3>Code Documentation</h3>
 <h4>1. Submit Form</h4>
-<ul>A. Function submitForm(event,page)-Fetch API</ul>
+<ul><h5>A. Function submitForm(event,page)-Fetch API</h5></ul>
 
 ```javascript
 function submitForm(event,page) { //bring page=from url as parameter
