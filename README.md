@@ -326,5 +326,22 @@ if(isset($_POST['submitbutton'])){
         }
 ```
 <ul><li>What a function do</li><ul><li>This code is used to delete page data from local storage.</li><li>Send AJAX request to <strong>deleteimg.php</strong></li></ul></ul>
-<ul><li>What the function's parameters or arguments are</li><ul><li><strong>value</strong> is the parameter of this function.Value is the index of data to be deleted in the local storage</li></ul></ul>
+<ul><li>What the function's parameters or arguments are</li><ul><li><strong>value</strong> is the parameter of this function.Value is the index of data to be deleted in the local storage.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
+<ul><li><h5>Unlink image from directory</h5></li></ul>
+
+``` PHP
+<?php  
+  
+ if(!empty($_POST["file"]))  //if image exist
+ {  
+     $img=$_POST["file"];
+
+     $img="images/". $img;  //specify folder name
+     
+     unlink($img);   //unlink image from directory (images) ->delete image 
+      
+ }  
+ ?>  
+```
+<ul><li>This PHP code is used to unlink image of data deleted from directory.</li></li>
