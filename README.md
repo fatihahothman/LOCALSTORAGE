@@ -421,7 +421,7 @@ function savePage() {
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
 
-<ul><h5>A. Function savePageMain()</h5></ul>
+<ul><h5>B. Function savePageMain()</h5></ul>
 
 ``` javascript
  function savePageMain(){
@@ -480,5 +480,71 @@ function savePage() {
 ```
 
 <ul><li>What a function do</li><ul><li>This code is used to push the data start at index 2 to the body of data index 1.</li><li>Push all those data to 'maindata' local storage as one section. </li></ul></ul>
+<ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
+<ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
+
+<ul><h5>C. Function savePageinBody()</h5></ul>
+
+``` javascript
+function savePageinBody(){
+
+          //  document.getElementById("save-page").click();
+           
+            $("#pgData").html(""); //clear localstorage container
+            let storage = new Array();
+            //get maindata in local storage
+            storage = JSON.parse(localStorage.getItem("maindata")) ? JSON.parse(localStorage.getItem("maindata")) : [];
+
+            //storing page number of section 
+            counter = JSON.parse(localStorage.getItem("counterPage")) ? JSON.parse(localStorage.getItem("counterPage")) : [];
+
+            counter = storage.length +1; //counter equal to storage length + 1 ,if there is 1 data in maindata then counter=1
+           
+
+            if (storage) {
+
+                let pageStorage = new Array();
+                pageStorage = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) : []; //get pagedata in local storage
+                temp = []; //declare array
+           
+                
+
+                console.log( pageStorage.length);
+
+                for (let i = 1; i < pageStorage.length; i++) { //loop thru local storage
+                    var dataArray = pageStorage[i]; //declaring dataArray to access key in local storage
+                        console.log(pageStorage[i]);
+                  
+                   
+                   temp.push(pageStorage[i]); //push into array temp[]
+                    //push pageStorage data start at index 1 into temp[] array 
+                }
+               
+                i = 0;
+                pageStorage = JSON.parse(pageStorage[i]);
+
+                pageStorage.PAGE = counter; //page number
+
+                pageStorage.BODY = temp; //set array BODY[] to temp[]-set temp[] as body of data index 0
+
+               storage.push(pageStorage); //push pageStorage from pagedata to maindata localstorage
+
+
+            }
+           
+
+            localStorage.setItem('counterPage', JSON.stringify(counter)); //save new page number to localStorage
+
+            localStorage.setItem('maindata', JSON.stringify(storage)); //  save maindata to local storage
+
+            localStorage.removeItem('pagedata'); //delete pagedata local storage after push to maindata
+
+            location.reload();
+
+        }
+
+```
+
+<ul><li>What a function do</li><ul><li>This code is used to call function submitForm(event,page) to submit an empty form at index 1.</li><li>Push data in the body of data index 1. </li><li>Push all those data to 'maindata' local storage as one section. </li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
