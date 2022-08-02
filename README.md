@@ -552,7 +552,7 @@ function savePageinBody(){
 <ul><h6>Function submitForm(event,page)Submit empty form</h6></ul>
 
 ``` javascript
-else{  //BtnValue.SUBMITBUTTON==4       utk submit empty form bila save page
+          else{  //BtnValue.SUBMITBUTTON==4       utk submit empty form bila save page
                    
                         var docdata = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) : [];
 
