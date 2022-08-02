@@ -570,7 +570,7 @@ function savePageinBody(){
 ```
 <ul><li>This is a snippet of code from function submitForm(event,page) for submitting empty form.This function will add the 'empty data' to the beginning of the array,index 0.</li></ul>
 
-<h4>4. Show Full Section</h4>
+<h4>5. Show Full Section</h4>
 <ul><li><h5>Function showFullPage()</h5></li></ul>
 
 ``` javascript
