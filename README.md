@@ -549,7 +549,7 @@ function savePageinBody(){
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
 
-<ul><h6>Function submitForm(event,page)Submit empty form</h6></ul>
+<ul><li><h6>Function submitForm(event,page)Submit empty form</h6></li></ul>
 
 ``` javascript
           else{  //BtnValue.SUBMITBUTTON==4       utk submit empty form bila save page
