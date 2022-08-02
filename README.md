@@ -278,7 +278,7 @@ if(isset($_POST['submitbutton'])){
         }
 
 ```
-<ul><li>What a function do</li><ul><li>This code is used to load data from local storage and display on HTML page.</li></ul></ul>
+<ul><li>What a function do</li><ul><li>This code is used to load data from local storage and display on HTML page.</li><li>This function is also used to call another function which is function removePageData(value).</li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
 <h4>3. Remove data</h4>
@@ -598,3 +598,6 @@ function savePageinBody(){
 <ul><li>What a function do</li><ul><li>This function is used to display the section data in JSON encoded string in HTML page.</li><li>This function also used to call another function which is function showDatabyRow(). </li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
+
+<h4>5. Display section data</h4>
+<ul><li><h5>Function showDatabyRow()</h5></li></ul>
