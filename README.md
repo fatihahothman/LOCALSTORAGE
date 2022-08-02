@@ -346,7 +346,7 @@ if(isset($_POST['submitbutton'])){
  ?>  
 ```
 <ul><li>This PHP code is used to unlink image of data deleted from directory.</li></li>
-<h4>3. Save Section</h4>
+<h4>4. Save Section</h4>
 <ul><h5>A. Function savePage()</h5></ul>
 
 ``` javascript
@@ -418,5 +418,67 @@ function savePage() {
 ```
 
 <ul><li>What a function do</li><ul><li>This code is used to call another function which are savePageMain() or savePageinBody().</li></ul></ul>
+<ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
+<ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
+
+<ul><h5>A. Function savePageMain()</h5></ul>
+
+``` javascript
+ function savePageMain(){
+            // location.reload();
+            $("#pgData").html(""); //clear localstorage container
+            let storage = new Array();
+            //get maindata in local storage
+            storage = JSON.parse(localStorage.getItem("maindata")) ? JSON.parse(localStorage.getItem("maindata")) : [];
+
+            //storing page number of section 
+            counter = JSON.parse(localStorage.getItem("counterPage")) ? JSON.parse(localStorage.getItem("counterPage")) : [];
+
+            if (storage) {
+
+                let pageStorage = new Array();
+                pageStorage = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) : []; //get pagedata in local storage
+                temp = []; //declare array
+           
+                counter = storage.length +1; //counter equal to storage length + 1 ,if there is 1 data in maindata then counter=1
+
+                console.log( pageStorage.length);
+
+                for (let i = 2; i < pageStorage.length; i++) { //loop thru local storage
+                    var dataArray = pageStorage[i]; //declaring dataArray to access key in local storage
+                        console.log(pageStorage[i]);
+                  
+                   
+                   temp.push(pageStorage[i]); //push into array temp[]
+                    //push pageStorage data start at index 2 into temp[] array 
+                }
+               
+                i = 1;
+                pageStorage = JSON.parse(pageStorage[i]);
+
+                pageStorage.PAGE = counter; //page number
+
+                pageStorage.BODY = temp; //set array BODY[] to temp[]-set temp[] as body of data index 1
+
+                storage.push(pageStorage); //push pageStorage from pagedata to maindata localstorage
+
+
+            }
+           
+
+            localStorage.setItem('counterPage', JSON.stringify(counter)); //save new page number to localStorage
+
+            localStorage.setItem('maindata', JSON.stringify(storage)); //  save maindata to local storage
+
+            localStorage.removeItem('pagedata'); //delete pagedata local storage after push to maindata
+
+            loadData(); //call loadData() to display local storage data of pagedata
+
+            location.reload();
+        }
+
+```
+
+<ul><li>What a function do</li><ul><li>This code is used to push the data start at index 2 to the body of data index 1.</li><li>Push all those data to 'maindata' local storage as one section. </li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
