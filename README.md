@@ -20,6 +20,7 @@ echo json_encode($btnreturn);  //The json_encode() function is used to encode a 
 <ul><h5>A. Function submitForm(event,page)-Fetch API</h5></ul>
 
 ```javascript
+
 function submitForm(event,page) { //bring page=from url as parameter
    
     // Prevent the form from submitting.
@@ -347,6 +348,7 @@ if(isset($_POST['submitbutton'])){
 <ul><li>This PHP code is used to unlink image of data deleted from directory.</li></li>
 <h4>3. Save Section</h4>
 <ul><h5>A. Function savePage()</h5></ul>
+
 ``` javascript
 function savePage() {
            
@@ -414,6 +416,7 @@ function savePage() {
         }
 
 ```
+
 <ul><li>What a function do</li><ul><li>This code is used to call another function which are savePageMain() or savePageinBody().</li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
