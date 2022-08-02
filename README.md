@@ -545,6 +545,27 @@ function savePageinBody(){
 
 ```
 
-<ul><li>What a function do</li><ul><li>This code is used to call function submitForm(event,page) to submit an empty form at index 1.</li><li>Push data in the body of data index 1. </li><li>Push all those data to 'maindata' local storage as one section. </li></ul></ul>
+<ul><li>What a function do</li><ul><li>This code is used to call function submitForm(event,page) to submit an empty form at index 0.</li><li>Push data in the body of data index 0. </li><li>Push all those data to 'maindata' local storage as one section. </li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
+
+<ul><h6>Function submitForm(event,page)Submit empty form</h6></ul>
+
+``` javascript
+else{  //BtnValue.SUBMITBUTTON==4       utk submit empty form bila save page
+                   
+                        var docdata = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) : [];
+
+                        console.log(docdata);   //print data in localstorage 
+                        
+                        docdata.shift(docdata);  //remove data at index 0-it is an empty array (pagedata)
+
+                        docdata.unshift(data);   //unshift data submitted to index 0-empty form so all data will be in the body[]-savePageinBody()
+                        
+                        localStorage.setItem('pagedata', JSON.stringify(docdata));  //  sets the value of the "data" Object item.Save Data to Local Storage. 
+                  
+                        // location.reload();
+       
+                }
+```
+<ul><li>This is a snippet of code from function submitForm(event,page) for submitting empty form.This function will add the 'empty data' to the beginning of the array,index 0.</li></ul>
