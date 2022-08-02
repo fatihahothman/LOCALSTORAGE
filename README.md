@@ -122,7 +122,7 @@ function submitForm(event,page) { //bring page=from url as parameter
 <ul><li>What the function's parameters or arguments are</li><ul><li><strong> event </strong> and <strong> page </strong>are the parameters for this function</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
 
-<ul>B. Get Form Data as JSON encoded</ul>
+<ul><h5>B. Get Form Data as JSON encoded</h5></ul>
 
 ``` php
 <?php 
