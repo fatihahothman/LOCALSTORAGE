@@ -280,8 +280,8 @@ if(isset($_POST['submitbutton'])){
 <ul><li>What a function do</li><ul><li>This code is used to load data from local storage and display on HTML page.</li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
-<h5>3. Remove data</h5>
-<ul><li><h5>Function removePageData(value)</h5></li></ul>
+<h4>3. Remove data</h4>
+<ul><li><h5>A. Function removePageData(value)</h5></li></ul>
 
 ``` javascript
  function removePageData(value) {
@@ -328,7 +328,7 @@ if(isset($_POST['submitbutton'])){
 <ul><li>What a function do</li><ul><li>This code is used to delete page data from local storage.</li><li>Send AJAX request to <strong>deleteimg.php</strong></li></ul></ul>
 <ul><li>What the function's parameters or arguments are</li><ul><li><strong>value</strong> is the parameter of this function.Value is the index of data to be deleted in the local storage.</li></ul></ul>
 <ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
-<ul><li><h5>Unlink image from directory</h5></li></ul>
+<ul><li><h5>B. Unlink image from directory</h5></li></ul>
 
 ``` PHP
 <?php  
