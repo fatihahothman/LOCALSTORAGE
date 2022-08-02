@@ -223,3 +223,60 @@ if(isset($_POST['submitbutton'])){
 ?>
 ```
 <ul><li>This PHP code is used to fetch button value from form and return to the Fetch API.</li></ul>
+<h4>2. Load Data </h4>
+
+``` javascript
+  function loadData() {
+           
+            let pageStorage = new Array();
+            $("#pgData").html(""); //emptying #localstorage container so no repeated data is displayed
+            // let x = 0; //initlal text box count
+            pageStorage = JSON.parse(localStorage.getItem("pagedata")) ? JSON.parse(localStorage.getItem("pagedata")) :
+                [] //get item from local storage
+            if (pageStorage) {
+                // document.getElementById("loadPgData").style.display = "block"; //card for displaying page data
+
+                for (let i = 1; i < pageStorage.length; i++) { //loop thru local storage
+
+                    let dataArray = JSON.parse(pageStorage[i]); //declaring dataArray to access key in local storage
+
+                    if (dataArray.BIGTITLE !== undefined) { //check if bigtitle is not undefined
+                        title = dataArray.BIGTITLE;
+                    } else { //if bigtitle undefined then it will take title as title (for addsub)
+                        title = dataArray.TITLE;
+                    } 
+                   
+                    if (dataArray.FIG_TITLE!=="" && dataArray.FIG_TITLE!==undefined) { //if anchor is not a number
+                        title = dataArray.FIG_TITLE;
+                    } 
+
+                    if (dataArray.ANCHOR !== "") {
+                        anchorTitle = dataArray.ANCHOR + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + title;
+                    } else {
+                        anchorTitle = title;
+                    }
+
+                    if (dataArray.BODY !== "" && dataArray.BODY.length>1) {
+                        body1 = dataArray.BODY;
+                      //  console.log(body1.join('\r\n'));
+                        body2=body1.join('<br><br>');  //put line break between paragraph
+
+                    }else{
+                        body2 = dataArray.BODY;
+                    }
+                  console.log(title);
+                    $('#loaddata').append(`<tr>
+                    <td class="col-10 PageData">${anchorTitle}<br>${body2}</td>
+                    <td class="ActionPage" style="text-align:center">&nbsp;&nbsp;<i class="far fa-trash-alt"  onclick="removePageData(${i});" style="color:#e74c3c;font-size:20px;"></i></i></td>
+                    </tr>`);
+                }
+
+            }
+
+        }
+
+```
+<ul><li>What a function do</li><ul><li>This code is used to load data from local storage and display on HTML page.</li></ul></ul>
+<ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter</li></ul></ul>
+<ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
+
