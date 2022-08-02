@@ -569,3 +569,32 @@ function savePageinBody(){
                 }
 ```
 <ul><li>This is a snippet of code from function submitForm(event,page) for submitting empty form.This function will add the 'empty data' to the beginning of the array,index 0.</li></ul>
+
+<h4>4. Show Full Section</h4>
+<ul><li><h5>Function showFullPage()</h5></li></ul>
+
+``` javascript
+ function showFullPage() {
+            $("#showPg").html(""); //emptying #localstorage container so no repeated data is displayed showDataRow
+            i = page - 1; //get page number--- page 1 =index 0 so i=page-1
+
+            let storage = new Array();
+
+            storage = JSON.parse(localStorage.getItem("maindata")) ? JSON.parse(localStorage.getItem("maindata")) :[] //get item from local storage
+            //get maindata that matched index of page-1
+            storage[i] = JSON.stringify(storage[i], null, '<br><br>'); //replace null with line break 
+
+            result = storage[i].replace(/\\/g,''); //g - Global replace. Replace all instances of the matched string in the provided text.
+
+            $($("#showPg")).append(`<tr>
+                    <td class="col-10 PageData">${ result}</td>
+                    </tr>`);
+
+            showDatabyRow();
+
+        }
+```
+
+<ul><li>What a function do</li><ul><li>This function is used to display the section data in JSON encoded string in HTML page.</li><li>This function also used to call another function which is function showDatabyRow(). </li></ul></ul>
+<ul><li>What the function's parameters or arguments are</li><ul><li>This function has no parameter.</li></ul></ul>
+<ul><li>What a function returns</li><ul><li>This function has no return value.</li></ul></ul>
