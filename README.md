@@ -202,18 +202,18 @@ if(isset($_POST['submitbutton'])){
 
 ?>
 ```
-<ul><li>This PHP codes is used to fetch form data from the form with POST method and return as JSON encoded string.</li></ul>
+<ul><li>This PHP codes is used to fetch form data from the form with POST method and return as JSON encoded string to the Fetch API.</li></ul>
 <ul><h5>C. Get button value from form</h5></ul>
 
 ``` PHP
 <?php 
 //  print_r($_FILES);
 if(isset($_POST['submitbutton'])){ 
-    //return value of submit button and edit row for edit local storage
+    //return value of submit button and edit row for edit local storage to differentiate what type of action is carried out-submit/edit/save section
     //as array
     $btnreturn=array(
-        "SUBMITBUTTON"=>$_POST['submitbutton'],
-        "EDITROW"=>$_POST['editRow']
+        "SUBMITBUTTON"=>$_POST['submitbutton'],  //value of submitbutton if 1=save ,2=edit body data,3=edit main,4=submit empty form for main of body 
+        "EDITROW"=>$_POST['editRow']   //index of row to be edited (edit data)
         
     );
     echo json_encode($btnreturn);  //The json_encode() function is used to encode a value to JSON format. 
@@ -222,3 +222,4 @@ if(isset($_POST['submitbutton'])){
 
 ?>
 ```
+<ul><li>This PHP code is used to fetch button value from form and return to the Fetch API.</li></ul>
