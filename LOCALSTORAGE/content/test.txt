@@ -1,0 +1,77 @@
+{
+	"SECTION": [{
+		"ANCHOR": "1.1",
+		"BIGTITLE": "Sample Contents",
+		"TITLE": "",
+		"BODY": [{
+				"ANCHOR": "1.1.1",
+				"TITLE": "Basic Arithmetic Operations",
+				"BODY": [],
+				"IMG": "",
+				"ALINK": ""
+			},
+			{
+				"ANCHOR": "1.1.1.1",
+				"TITLE": "Basic Terms of Arithmetic and Algebra",
+				"BODY": [
+				    "The study of arithmetic and algebra is the study of the general properties of numbers, mainly the real numbers.",
+				"<strong>Numbers and Digits</strong>", 
+				    "Numbers are represented by words or signs, numerals and digits. The standard number system used for computations is the decimal system. All numbers can be written by means of the 10 digits (0, 1, 2, 3, 4, 5, 6, 7, 8, 9). The digit place within a numeral determines its value. Each digit position represents a decimal step, since10 units of a step form the next higher step. For instance, in the number 427 the4 stands for 4 hundreds, the 2 for 2 tens, and the 7 for 7 units.",
+					"Three decimal steps form a group. For better readability groups of numerals may be separated by a space, or by a comma in English speaking countries, or by a point in other countries.",
+				"<strong>Real Numbers</strong>", 
+				    "Numbers are called â€™natural numbersâ€™ or â€™counting numbersâ€™, if there is no particularsign in front or within the numeral. Using these numbers, objects can be counted, measured, sorted, grouped or divided.",
+				"Refer to <a href=\"#figure1\">Figure 1<\/a>."
+				    
+				],
+				"IMG": "",
+				"ALINK": ""
+			}
+		],
+		"IMG": "",
+		"ALINK": ""
+	},{
+		"ANCHOR": "",
+		"BIGTITLE": "",
+		"TITLE": "",
+		"BODY": [
+"",
+"",		    
+"A good way to get an idea of real and natural numbers is to refer to a number line.Any point on the number line is chosen and called 0. The distance 01 determines aunit. Multiples of 01 determine points representing other numbers, e.g. 2, 3, 4 etc.,positive numbers to the right of 0 and negative numbers to the left.",
+		    "Positive and negative whole numbers including the number 0 (zero) are referred to as integers. When adding, subtracting or multiplying integers, the result is always an integer.",
+		    "The result of dividing integers is a fraction or ratio. On the number line, all points between two integers are fractions. Each fraction consists of a nominator and a denominator. It can be positive, negative or zero.",
+"A special form of fractions is the decimal fraction, whose denominator is some power of 10, usually indicated by a dot (decimal point) written before the nominator.",
+"Integers and fractions are rational numbers. Every number that can be represented by a finite sequence of digits is rational. Numbers, which do not correspond to that rule are irrational.",
+"Rational and irrational numbers form the group of real numbers. They are called relative numbers, if they have a positive (+) or negative (--) sign, which refers to its position to zero."
+
+		],
+		"IMG": "",
+		"ALINK": ""
+	},{
+		"ANCHOR": "",
+		"BIGTITLE": "",
+		"TITLE": "",
+		"BODY": [
+		    "When a current flows",
+		    "EMF = PD + internal voltage drop.",
+		    "When no current flows",
+		    "EMF = PD",
+		    "EMF and PD are both measured in volts (V).",
+		    ""
+		],
+		"IMG": "",
+		"ALINK": ""
+	},{
+		"ANCHOR": "3.3.1.3",
+		"BIGTITLE": "",
+		"TITLE": "Conventional Current and Electron Flow",
+		"BODY": [
+		     "In the example above a potential difference of approximately 1 V exists between the anode and the cathode. The potential difference depends on the plate (or electrode) materials",
+		     "Refer to <a href=\"#figure5\">Figure 5<\/a>.",
+		     "If an electrical connection is now made between the anode and cathode, a potential difference will occur which will cause a current flow in the external circuit. The current flow is proportional to the plate area and to a smaller extent to internal resistance and temperature. More zinc will dissolve and ions will continue to pass through the electrolyte to the copper. Electrons will flow in the external circuit from zinc to copper, while the conventional current flows from copper to zinc.",
+		     ""
+		    
+		],
+		"IMG": "",
+		"ALINK": ""
+	}]
+}

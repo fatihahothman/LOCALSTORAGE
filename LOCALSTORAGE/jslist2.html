@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>JS list</title>
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="YH5NIp1UtyJcMxrrEOwMB3ncsv8UukepUFpUWTO_7yE" />
+    <meta name="google-signin-client_id"
+        content="538208214824-jg7c1u15he6c9biboek9foog19ntbo4c.apps.googleusercontent.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&family=Roboto:ital,wght@0,400;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- fontawesome cdn -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <script src="https://kit.fontawesome.com/a98a5ccfd5.js" crossorigin="anonymous"></script>
+
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+    <!--Datatables is a JQuery plugin that supports basic data table functionalities
+
+       such as sorting, searching, and paging without any configurations-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+
+    <!-- Bootstrap Scripts -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.lordicon.com//libs/frhvbuzj/lord-icon-2.0.2.js"></script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/editForm.css" />
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+        <div class="container">
+            <a class="navbar-brand" href="#">Slide<strong>Maker</strong></a> <a class="navbar-brand dimmed"
+                href="webbook/1029711610510497104111116104109971105552641031099710510846991111092430">Web<strong>Book</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item nav-link nav-name" style="color: #0498fc;">
+                        Logged in as nurfatihah othman
+                    </li>
+                    <li class="nav-item nav-status">
+                        <a class="nav-link" href='login.php?logout=1'>Logout</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container-fluid">
+            <div class="col-12">
+                <div class="card" id="showDataRow" style="margin-top:50px;">
+                    <div class="card-header" style="font-weight: bold;"></div>
+                    <div class="card-body">
+
+                        <div class="table-responsive" id="accordion">
+
+                            <table class="table table-bordered table-hover" id="showDataRows">
+                                <thead>
+                                    <tr>
+
+                                        <th scope="col-2">Section</th>
+                                        <th scope="col-10" style="text-align:center">Section Data</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="showDataRows">
+
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script>
+        var SECTION = [
+
+
+            {
+
+
+
+                ANCHOR: "7.1",
+
+
+
+
+
+                TOC: "7.1",
+
+
+
+
+
+                BIGTITLE: " Safety Precautions -- Aircraft and Workshop",
+
+
+
+
+
+                BODY: [
+
+
+
+
+                    {
+
+                        ANCHOR: "7.1.1",
+
+                        TOC: "7.1.1",
+
+                        TITLE: "Safety Precautions in the Workshop",
+
+                        BODY: [""],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "7.1.1.1",
+
+                        TOC: "7.1.1.1",
+
+                        TITLE: "General Safety Precautions",
+
+                        BODY: [""],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Introduction",
+
+                        BODY: ["Safety regulations are necessary in each workshop to prevent any accidents to the people who use tools and machines for their work.",
+
+                            "There are accident prevention regulations for every professional branch for safety reasons and accident prevention.",
+
+                            "Every technician must fully comply with these regulations. Accident prevention can be learnt. Accidents to personnel and damage to equipment are mostly caused by disregard of safety regulations.",
+
+                            "Everybody who disregards regulations and safety signs endangers himself and his colleagues as well as plant and equipment."
+                        ],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Reasons for Accidents",
+
+                        BODY: [
+                            "Accidents are caused by human failures, like ignorance of the danger, thoughtlessness and negligence, as well as technical failures (breakdowns)."],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Avoidance of Possible Dangerous Risks",
+
+                        BODY: [
+                            "Accidents are caused by human failures, like ignorance of the danger, thoughtlessness and negligence, as well as technical failures (breakdowns)."],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    }
+
+
+
+                ],
+
+
+
+                FIG_TITLE: "",
+
+
+
+
+
+                ALINK: "",
+
+
+
+
+
+                IMG: "",
+
+
+
+
+
+                PAGE: 1
+
+
+            },
+
+
+            {
+
+
+
+                ANCHOR: "",
+
+
+
+
+
+                TITLE: "",
+
+
+
+
+
+                BODY: [
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Personal Protective Clothing and Devices",
+
+                        BODY: ["To avoid accidents in the working place, the correct protective clothing must be worn and all safety rules must be followed.",
+
+                            "It is the employeru2019s responsibility to provide protective clothing and equipment. Employees have to wear correct clothing in order to prevent themselves from possible serious injury."
+                        ],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Safety Boots",
+
+                        BODY: [
+                            "Hard--toed safety boots with antiskid, antistatic as well as oil-- and acid--resisting soles must be worn where required."],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Head Protection",
+
+                        BODY: [
+                            "Only safety helmets which have been tested and have a test mark and a registration number should be worn. A shock--proof helmet must be worn in areas where warning signs prescribes them."],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Eye Protection",
+
+                        BODY: [
+                            "Safety glasses are always necessary when any dust, metal swarf etc. might hit therneye."],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    }
+
+
+
+                ],
+
+
+
+                FIG_TITLE: "",
+
+
+
+
+
+                ALINK: "",
+
+
+
+
+
+                IMG: "",
+
+
+
+
+
+                PAGE: 2
+
+
+            },
+
+
+            {
+
+
+
+                ANCHOR: "",
+
+
+
+
+
+                BIGTITLE: "",
+
+
+
+
+
+                TITLE: "",
+
+
+
+
+
+                BODY: [
+
+
+
+
+                    {
+
+                        ANCHOR: "7.1.1.2",
+
+                        TOC: "7.1.1.2",
+
+                        TITLE: "The Hazards of Electric Current",
+
+                        BODY: ["The hazards of electric current mainly depend on the strength and duration of the current passing through the human body.",
+
+                            "There is a difference between the hazard related to direct current (DC) and that with alternating current (AC). AC is more dangerous than DC. As regards AC, the level of danger varies depending on the frequency. Frequencies of 50 Hz or 60 Hz are dangerous to the human body, whereas frequencies below and above these values are less dangerous."
+                        ],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    }
+
+
+
+                ],
+
+
+
+                FIG_TITLE: "",
+
+
+
+
+
+                ALINK: "",
+
+
+
+
+
+                IMG: "",
+
+
+
+
+
+                PAGE: 3
+
+
+            },
+
+
+            {
+
+
+
+                ANCHOR: "",
+
+
+
+
+
+                TITLE: "",
+
+
+
+
+
+                BODY: [
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        BIGTITLE: "",
+
+                        TITLE: "",
+
+                        BODY: ["In selecting a screwdriver for electrical work, be sure that it has a non--conducting handle. The screwdriver should not be used as a substitute for a punch or a chisel, and care should be taken that one is selected of the correct size to fit the screw.",
+
+                            "When using a fuse puller, ensure that it is the correct type and size for the particular fuse to be pulled.",
+
+                            "The soldering iron is a fire hazard and a potential source of burns. Always assume that a soldering iron is hot; never rest the iron anywhere but on a metal surface or rack provided for that purpose.",
+
+                            "Keep the iron holder in the open to minimise the danger of fire from accumulated heat. Do not shake the iron to dispose of excess solder; a drop of hot solder may hit someone, or it may strike the equipment and cause a short circuit. Hold small parts to be soldered with pliers or clamps.",
+
+                            "When cleaning the iron, place the cleaning rag on a suitable surface and wipe the iron across it; do not hold the rag in the hand. Disconnect the iron when leaving the work, even for a short time; the delay may be longer than intended."
+                        ],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        TITLE: "Safety Precautions When Using Cleaning Solvents",
+
+                        BODY: ["Dust and dirt can disturb the function of electronic equipment, so that it will be necessary to do some cleaning from time to time.",
+
+                            "For any cleaning on electrical or electronic equipment it is not allowed to use alcohol, gasoline, benzine, ether or other volatile substances. Only non--volatile solvents should be used.",
+
+                            "Many cleaning solvents are very toxic and capable of damaging the human respiratory (breathing) system in case of prolonged inhalation."
+                        ],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    }
+
+
+
+                ],
+
+
+
+                FIG_TITLE: "",
+
+
+
+
+
+                ALINK: "",
+
+
+
+
+
+                IMG: "",
+
+
+
+
+
+                PAGE: 4
+
+
+            },
+
+
+            {
+
+
+
+                ANCHOR: "",
+
+
+
+
+
+                TITLE: "",
+
+
+
+
+
+                BODY: [
+
+
+
+
+                    {
+
+                        ANCHOR: "7.1.1.5",
+
+                        TOC: "7.1.1.5",
+
+                        TITLE: "Mouth--to--Mouth or Mouth--to--Nose Resuscitation",
+
+                        BODY: ["Refer to Figure 6."],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "fig6",
+
+                        IMG: ""
+
+                    },
+
+
+
+
+                    {
+
+                        ANCHOR: "",
+
+                        BIGTITLE: "",
+
+                        TITLE: "",
+
+                        BODY: ["If the victim needs assistance in breathing, first clear the mouth of any food particles, foreign objects, or loose dentures.",
+
+                            "When a victim becomes unconscious, the muscles relax and the tongue may slide back into the airway blocking it.",
+
+                            "To open the airway in this situation, the head or jaw tilt technique is recommended.",
+
+                            "The head tilt technique is performed with the victim on his back and the rescuer kneeling at his side -- head and neck in line with the victim. Place one hand on the victimu2019s forehead and the other under his neck. Apply pressure on the forehead and at the same time lift the neck. Tilting the head in this manner opens the airway.",
+
+                            "To check for breathing, look for chest movement or put your ear next to the victimu2019s nose and mouth to listen and feel for breath."
+                        ],
+
+                        FIG_TITLE: "",
+
+                        ALINK: "",
+
+                        IMG: ""
+
+                    }
+
+
+
+                ],
+
+
+
+                FIG_TITLE: "",
+
+
+
+
+
+                ALINK: "",
+
+
+
+
+
+                IMG: "",
+
+
+
+
+
+                PAGE: 5
+
+
+            },
+
+
+            {
+
+
+
+                ANCHOR: "",
+
+
+
+
+
+                BIGTITLE: "",
+
+
+
+
+
+                TITLE: "",
+
+
+
+
+
+                BODY: [
+
+
+
+
+                    {
+
+                        ANCHOR: "fig1",
+
+                        TOF: "fig1",
+
+                        BIGTITLE: "",
+
+                        TITLE: "",
+
+                        BODY: [""],
+
+                        FIG_TITLE: "Figure 1 Protective Clothing",
+
+                        ALINK: "",
+
+                        IMG: "73362207271658892580.png"
+
+                    }
+
+
+
+                ],
+
+
+
+                FIG_TITLE: "",
+
+
+
+
+
+                ALINK: "",
+
+
+
+
+
+                IMG: "",
+
+
+
+
+
+                PAGE: 6
+
+
+            }
+        ];
+
+
+        for (let i = 0; i < SECTION.length; i++) { //loop thru local storage
+              //  let dataArray = storage[i]; //declaring dataArray to access key in local storage
+
+                if(SECTION[i].BIGTITLE !==undefined){
+                    SECTION[i].BIGTITLE=SECTION[i].BIGTITLE;
+                }else{
+                    SECTION[i].BIGTITLE="";
+                }
+              
+                // load page from local storage
+                $('tbody').append(`<tr>
+                <td  class="col-1 Pagename">&nbsp;&nbsp;Section&nbsp;&nbsp;${(i + 1)}</td>
+                <td class="col-10 " >${SECTION[i].ANCHOR}&nbsp;${SECTION[i].BIGTITLE}</td>
+                </tr>`);
+
+                for(let z = 0; z< SECTION[i].BODY.length; z++){
+
+                    if (SECTION[i].BODY[z].BODY !== "") {
+                        body1 = SECTION[i].BODY[z].BODY;
+                        //   console.log(body1.join('\r\n'));
+                        SECTION[i].BODY[z].BODY=body1.join('<br><br>');
+
+                    }
+
+                    $('tbody').append(`<tr>
+                    <td  class="col-1 Pagename"></td>
+                    <td class="col-10 " >${SECTION[i].BODY[z].ANCHOR}&nbsp;${SECTION[i].BODY[z].TITLE}&nbsp;${SECTION[i].BODY[z].FIG_TITLE}<br>${SECTION[i].BODY[z].BODY}</td>
+                    </tr>`);
+
+                    console.log(SECTION[i].BODY[i]);
+                }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>
